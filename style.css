@@ -23,7 +23,6 @@ body {
 }
  
 .calculator{
-  background: white;
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0,0.6);
