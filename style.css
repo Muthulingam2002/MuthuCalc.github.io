@@ -23,6 +23,7 @@ body {
 }
  
 .calculator{
+  background: white;
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0,0.6);
@@ -117,7 +118,7 @@ button:hover{
 
 .equal-sign {
   grid-column: -2;
-  grid-row: 2 / span 4;
+  grid-row: 3 / span 4;
   background: rgb(13, 206, 87);
 }
 
@@ -127,6 +128,10 @@ button:hover{
 }
 .clear:hover{
   filter: brightness(90%);
+}
+
+.delete{
+  background: rgba(0, 195, 255, 0.918)
 }
 
 @media(max-width:500px) {
