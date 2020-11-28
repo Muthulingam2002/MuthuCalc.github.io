@@ -94,19 +94,6 @@ button{
   background: rgb(195, 191, 191)
   
 }
-
-a{
-  text-decoration: none;
-  list-style: none;
-  font-size: 30px;
-  padding: 20px;
-}
-a:hover{
-  font-size: 35px;
-  rotate: 70deg;
-  animation: animate__shakeY
-}
-
 button:hover{
   filter:brightness(120%)
 }
