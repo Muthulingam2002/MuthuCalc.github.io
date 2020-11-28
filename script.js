@@ -1,7 +1,22 @@
 const inputBtns=document.querySelectorAll("button");
 const clearBtn=document.getElementById("clear-btn"); 
 const calculatorDisplay=document.querySelector("h1");
+const deleteValue=document.getElementById("del");
 
+
+//👇 create a calculation object to store and access function for each operators
+
+const calculation={
+    "/": (firstNumber,secondNumber) => firstNumber/secondNumber,
+
+    "*": (firstNumber,secondNumber) => firstNumber*secondNumber,
+
+    "+": (firstNumber,secondNumber) => firstNumber+secondNumber,
+
+    "-": (firstNumber,secondNumber) => firstNumber-secondNumber,
+
+    "=": (firstNumber,secondNumber) => secondNumber,
+}
 
 let firstValue=0;
 let operatorValue="";
@@ -30,21 +45,6 @@ function addDecimal(){
 }
 
 
-//👇 create a calculation object to store and access function for each operators
-
-const calculation={
-    "/": (firstNumber,secondNumber) => firstNumber/secondNumber,
-
-    "*": (firstNumber,secondNumber) => firstNumber*secondNumber,
-
-    "+": (firstNumber,secondNumber) => firstNumber+secondNumber,
-
-    "-": (firstNumber,secondNumber) => firstNumber-secondNumber,
-
-    "=": (firstNumber,secondNumber) => secondNumber,
-}
-
-
 function useOperator(operator){
     // calculatorDisplay.innerText is a string we must change it to number
     const currentValue=Number(calculatorDisplay.innerText);
@@ -70,30 +70,36 @@ function useOperator(operator){
     operatorValue = operator;
 }
 
-//add eventlisenters for numbers, operators, decimal
-inputBtns.forEach((inputBtn) => {
- if(inputBtn.classList.contains("number")){
- inputBtn.addEventListener("click",()=>sentItemsDisplay(inputBtn.value))
- } else if(inputBtn.classList.contains("operator")){
-    inputBtn.addEventListener("click",()=>useOperator(inputBtn.value))
-  } else if(inputBtn.classList.contains("decimal")){
-    inputBtn.addEventListener("click",addDecimal)
-   }
-});
 
 
 //reset the display and values when the clear button is pressed
 
 
 function clearAll(){
+  
     firstValue=0;
     operatorValue="";
     awaitingNextValue=false;
     calculatorDisplay.innerText='0';
 }
 
+function deleteLastValue(){ 
+    calculatorDisplay.innerText= calculatorDisplay.innerText.slice(0,-1)
+}
+
+//add eventlisenters for numbers, operators, decimal
+inputBtns.forEach((inputBtn) => {
+    if(inputBtn.classList.contains("number")){
+    inputBtn.addEventListener("click",()=>sentItemsDisplay(inputBtn.value))
+    } else if(inputBtn.classList.contains("operator")){
+       inputBtn.addEventListener("click",()=>useOperator(inputBtn.value))
+     } else if(inputBtn.classList.contains("decimal")){
+       inputBtn.addEventListener("click",addDecimal)
+      }
+   });
+   
 
 
-
-//event listener for clear
+//event listener for clear and delete
 clearBtn.addEventListener("click", clearAll);
+deleteValue.addEventListener("click", deleteLastValue);
