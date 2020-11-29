@@ -4,6 +4,8 @@ const calculatorDisplay=document.querySelector("h1");
 const deleteValue=document.getElementById("del");
 
 
+
+
 //👇 create a calculation object to store and access function for each operators
 
 const calculation={
@@ -60,7 +62,6 @@ function useOperator(operator){
       firstValue=currentValue;
     }
     else{
-        console.log(firstValue+operatorValue+currentValue)
         const calculate=calculation[operatorValue](firstValue, currentValue);
         calculatorDisplay.innerText=calculate;
         firstValue=calculate;
@@ -81,10 +82,16 @@ function clearAll(){
     operatorValue="";
     awaitingNextValue=false;
     calculatorDisplay.innerText='0';
+
 }
 
 function deleteLastValue(){ 
+    if(calculatorDisplay.innerText.length>1){
     calculatorDisplay.innerText= calculatorDisplay.innerText.slice(0,-1)
+    }
+    else{
+        calculatorDisplay.innerText=0
+    }
 }
 
 //add eventlisenters for numbers, operators, decimal
