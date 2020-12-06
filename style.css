@@ -23,7 +23,9 @@ body {
 }
  
 .calculator{
-  background: white;
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0,0.6);
@@ -34,9 +36,6 @@ body {
   background: black;
   padding:10px;
   margin:0;
-  display:flex;
-  align-items: center;
-  justify-content: flex-end;
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -44,9 +43,20 @@ body {
   color: white;
   font-family: "lucida console", "san-serief";
   overflow-x: auto;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-/*                scroll bar                           */
+
+h2{
+  color: white;
+  font-family: "lucida console", "san-serief";
+  overflow-x: auto;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 70%;
+}
 
 
 
@@ -94,6 +104,9 @@ button{
   background: rgb(195, 191, 191)
   
 }
+
+
+  
 button:hover{
   filter:brightness(120%)
 }
@@ -105,8 +118,13 @@ button:hover{
 
 .equal-sign {
   grid-column: -2;
-  grid-row: 3 / span 4;
+  grid-row: 4 / span 3;
   background: rgb(13, 206, 87);
+  height:158px
+}
+#pi{
+  background: rgb(247, 251, 12);
+  font-family: cursive;
 }
 
 .clear{
