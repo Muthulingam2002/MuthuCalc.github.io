@@ -1,5 +1,5 @@
 # MuthuCalc.github.io
-This is a calculator i have created using HTML,CSS, Javascript
+This is a calculator I have created using HTML,CSS, Javascript
 
 https://muthulingamdeveloper.github.io/MuthuCalc.github.io/
 
